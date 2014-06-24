@@ -1,0 +1,6 @@
+@charset utf-8;
+body{margin:0 30%;width:600px;}
+.BK{background-image:url(ie.jpg);width:356px;height:308px;position:center;}
+.IE{font-family:'Microsoft YaHei', Tahoma, Verdana;font-size:14px;color:#32525A;}
+.IE a{font-family:'Microsoft YaHei', Tahoma, Verdana;font-size:14px;color:#4eb2d4;}
+.IE img{vertical-align: middle;}
