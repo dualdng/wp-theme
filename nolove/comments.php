@@ -4,9 +4,6 @@
  *
  * The area of the page that contains comments and the comment form.
  *
- * @package WordPress
- * @subpackage Twenty_Thirteen
- * @since Twenty Thirteen 1.0
  */
 
 /*
@@ -26,6 +23,8 @@ if ( post_password_required() )
 			// Are there comments to navigate through?
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 		?>
+		<div id='comments-previous'><?php previous_comments_link(' ');?></div>
+	<div id='comments-next'><?php next_comments_link(' ');?></div>
 		<?php endif; // Check for comment navigation ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>

@@ -1,12 +1,4 @@
 ﻿<?php
-/**
- * The Template for displaying all single posts.
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-
 get_header(); ?>
 	<article id='header' >
 	<a href='<?php bloginfo('url'); ?>'>首页</a>&nbsp>>&nbsp<?php the_category(’, ‘) ?>&nbsp>>&nbsp<a href='<?php the_permalink() ?>' ><?php the_title(); ?></a>
@@ -15,8 +7,7 @@ get_header(); ?>
 			<?php while(have_posts()) : the_post(); ?> 
 			<div class='contentleft'>
 			<div class='article'>
-			<h2 class='single'><?php the_title(); ?></h2>
-			<p class='tags'><?php the_date('Y-m-d'); ?>&nbsp<?php the_time('G:i'); ?>&nbsp|&nbsp<?php the_category(’, ‘) ?>&nbsp|&nbsp<?php comments_number( 'no responses', 'one response', '% responses' ); ?></p>
+			<h2>美图时刻</h2>
 			<?php the_content(); ?>		
 			
 			</div>
@@ -42,14 +33,13 @@ $args = array(
         'caller_get_posts' => 1);
 query_posts($args);
 if (have_posts()) : 
-while (have_posts()) : the_post(); update_post_caches($posts); ?>
- <div class="image-wrap">
-                <div class="hover-wrap">
+		while (have_posts()) : the_post(); update_post_caches($posts); ?>
+		<div class="image-wrap">
+		 <div class="hover-wrap">
                     <span class="overlay-img"></span>
-                    <span class="overlay-text-thumb"><?php the_title();?></span>
-                </div>
-                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute();
- ?>"><?php echo catch_that_image()?></a>
+					<span class="overlay-text-thumb"><a href=<?php the_permalink();?>><?php the_title();?></a></span>
+					</div>
+				<?php echo catch_that_image()?>
             </div>
 <?php endwhile; else : ?>
 <li>* 暂无相关文章</li>
@@ -63,7 +53,6 @@ while (have_posts()) : the_post(); update_post_caches($posts); ?>
   <?php comments_number( 'no responses', 'one response', '% responses' ); ?>.
 </p>
 			<?php comments_template( '', true ); ?>
-
 		</div><!-- #content -->
 	</article><!-- #primary -->
 

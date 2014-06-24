@@ -1,24 +1,14 @@
-﻿<!DOCTYPE html>
+﻿<!doctypehtml>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 <title><?php if (is_home()) : ?><?php bloginfo('name'); ?>|<?php bloginfo('description')?><?php else: ?><?php wp_title(''); ?><?php endif;?></title>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/jquery-2.1.0.min.js'></script>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css" media="all" />
 	<script type='text/javascript' src='<?php echo get_template_directory_uri(); ?>/js/zhanglu.js'></script>	
 	<script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/phzoom/phzoom.js'></script>
     <link href='<?php echo get_template_directory_uri(); ?>/phzoom/phzoom.css' rel="stylesheet" type="text/css" />
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?9d4691517063fe7311505ce99ce1be5a";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-	
 
 <!--[if lt IE 8]>
 <script>    
@@ -33,6 +23,15 @@ location.href="<?php echo get_template_directory_uri(); ?>/ie/ie.html";
 <![endif]-->
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 <?php wp_head(); ?>
+<script>
+var _hmt = _hmt || [];
+(function() {
+		  var hm = document.createElement("script");
+		    hm.src = "//hm.baidu.com/hm.js?9d4691517063fe7311505ce99ce1be5a";
+			  var s = document.getElementsByTagName("script")[0]; 
+			    s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 
 <body>
@@ -70,24 +69,24 @@ location.href="<?php echo get_template_directory_uri(); ?>/ie/ie.html";
 	
 	<ul>
 		<li>
-			<a href="http://www.uuuuj.com/about">一块板</a>
+			<a href=<?php bloginfo('url')?>/about>一块板</a>
 		</li>
 		<li>
 			<a href="#">豆瓣</a>
 			<ul>
-				<li><a href="http://www.uuuuj.com/archives/10">电台</a></li>
-				<li><a href="http://www.uuuuj.com/archives/136">电影</a></li>
+				<li><a href="http://www.uuuuj.com/10">电台</a></li>
+				<li><a href="http://www.uuuuj.com/136">电影</a></li>
 			</ul>
 		</li>
 		<li>
-			<a href="http://www.uuuuj.com/archives/category/words">碎语</a>
+			<a href="http://www.uuuuj.com/category/words">碎语</a>
 			<ul>
-				<li><a href="http://www.uuuuj.com/archives/category/lovez">只一个人</a></li>
-				<li><a href="http://www.uuuuj.com/archives/category/music">音乐</a></li>
-				<li><a href="http://www.uuuuj.com/archives/category/movies">电影</a></li>
-				<li><a href="http://www.uuuuj.com/archives/category/re-post">转载</a></li>
-				<li><a href="http://www.uuuuj.com/archives/category/themes">主题</a></li>
-				<li><a href="http://www.uuuuj.com/archives/category/nostudy">笔记</a></li>
+				<li><a href="http://www.uuuuj.com/category/lovez">只一个人</a></li>
+				<li><a href="http://www.uuuuj.com/category/music">音乐</a></li>
+				<li><a href="http://www.uuuuj.com/category/movies">电影</a></li>
+				<li><a href="http://www.uuuuj.com/category/re-post">转载</a></li>
+				<li><a href="http://www.uuuuj.com/category/themes">主题</a></li>
+				<li><a href="http://www.uuuuj.com/category/nostudy">笔记</a></li>
 			</ul>
 		</li>
 		<li>
@@ -106,4 +105,3 @@ location.href="<?php echo get_template_directory_uri(); ?>/ie/ie.html";
 </div>
 <?php endif; ?>
 <div class='scroll-arrow'><a class='scroll' href='#' onclick='scroll();return false'><img src='<?php echo get_template_directory_uri(); ?>/images/plain_plus.svg' /></a></div>
-

@@ -1,0 +1,5 @@
+ngle-image.php:独立的image页面风格。
+2、single-status.php：独立的状态页面风格。
+3、single-standard.php：独立的标准文章页面。
+4、singel-video.php:尚未建立。目前video标签只是作为在index页面进行区分作用。video只展示一行内容+author头像。
+5、category-2为独立的secret分类页面效果，尚未启用。
