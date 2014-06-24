@@ -1,0 +1,6 @@
+.sideshow{display:none};
+#noimg {margin:13% 2% 0 2%;}
+#singlecontent img{width:100%;height:200px;}
+#contentpak {text-align:center;visibility:visible;position:absolute; top:10px;left:33px;background:#fff;opacity: .8;height:180px;width:250px;}
+#singlecontent:hover > #contentpak{visibility:visible;}
+
