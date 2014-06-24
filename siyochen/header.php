@@ -40,7 +40,25 @@
 				<?php /* Our navigation menu. If one isn't filled out, wp_nav_menu falls back to wp_page_menu. The menu assigned to the primary location is the one used. If one isn't assigned, the menu with the lowest ID is used. */ ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
   </div>
+  <div class='sideshow'>
+<ul>
+<?php
+$array=top_img();
+$num=count($array);
+for($i=0;$i<$num;$i++)
+{
+		echo '<li>';
+		echo '<span class=\'top_img\'>'.$array[$i][0].'</span>';
+		echo '<div class=\'top_else\'>';
+		echo '<h1>'.$array[$i][2].'</h1>';
+		echo '<a class=\'btn\' href=\''.BLOG_URL.'/?post='.$array[$i][3].'\'>Learn More -></a>';
+		echo '</div>';
+		echo '</li>';
+}
+?>
+</ul>
 <div id='sawtooth'>
 <img src='<?php echo get_template_directory_uri(); ?>/images/sawtooth.png' />
+</div>
 </div>
 
