@@ -1,0 +1,13 @@
+<script src="<?php echo get_template_directory_uri(); ?>/pic/jquery.masonry.min.js"></script>
+<script>
+$(function(){
+	var $container = $('.pic-content');
+	$container.imagesLoaded( function(){
+		$container.masonry({
+			itemSelector : '.pic-contentleft',
+			gutterWidth : 20,
+			isAnimated: true,
+		});
+	});
+});
+</script>

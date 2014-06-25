@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
 <html <?php language_attributes(); ?>>
 <head>
-<meta  charset='<?php bloginfo( 'charset' ); ?>'/>
+<meta  charset='utf-8'/>
 <title><?php if (is_home()) : ?><?php bloginfo('name'); ?>|<?php bloginfo('description')?><?php else: ?><?php wp_title(''); ?><?php endif;?></title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 <link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo get_template_directory_uri(); ?>/pic/pic.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-2.1.0.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/unslider.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/pic/jquery.masonry.min.js"></script>
 <script>$(function() {
     $('.sideshow').unslider({speed: 500,               //  The speed to animate each slide (in milliseconds)
 	delay: 300000000000000,              //  The delay between slide animations (in milliseconds)
@@ -17,6 +19,18 @@
 	dots: true,               //  Display dot navigation
 	fluid: false              //  Support responsive design. May break non-responsive designs
 });
+});
+</script>
+<script>
+$(function(){
+	var $container = $('.pic-content');
+	$container.imagesLoaded( function(){
+		$container.masonry({
+			itemSelector : '.pic-contentleft',
+			gutterWidth : 20,
+			isAnimated: true,
+		});
+	});
 });
 </script>
 <!--[if  lte IE 9]>
@@ -43,7 +57,7 @@
   <div class='sideshow'>
 <ul>
 <?php
-$array=top_img();
+/*$array=top_img();
 $num=count($array);
 for($i=0;$i<$num;$i++)
 {
@@ -55,6 +69,7 @@ for($i=0;$i<$num;$i++)
 		echo '</div>';
 		echo '</li>';
 }
+*/
 ?>
 </ul>
 <div id='sawtooth'>
