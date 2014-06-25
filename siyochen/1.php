@@ -1,4 +1,4 @@
- /** 获取文章第一张图片 **/ function catch_that_image() 
+ /** 获取文章第一张图片 **/ function first_image() 
 {  
 		global $post, $posts;  
 		$first_img = '';  
@@ -15,3 +15,5 @@ else
 		$first_img = '<img src="'.$first_img.'"/>'; }  
 		return $first_img;    
 }
+//放到functions.php 中
+
