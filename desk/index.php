@@ -29,11 +29,11 @@
 <li>
 
 <div class="wrapper">
-<?php if(get_the_img()){
+<?php 
 		echo '<div class="post-list-img"><a href="'.get_permalink().'" title="'.get_the_title().'">';
 		the_img();
 		echo '</a></div>';
-	} ?>
+	 ?>
 </div>
 
 <div class="info">
@@ -81,7 +81,7 @@
 <?php endif; ?>
 </ul>
 
-<div class="">
+<div class="pagenavi">
 
 <span class="t"><?php pagenavi(); ?></span>
 </div>
@@ -90,23 +90,6 @@
 </div></div>
 
 
-<div id="content">
-<div id="banner"></div>
-<div id="personal">
-<div class="info"></div>
-<div class="device"></div>
-</div>
-<div id="list"></div>
-<div id="detail">
-<div class="image"></div>
-<div class="comments"></div>
-</div>
-<div id="account"></div>
-<div id="link"></div>
-<div id="app"></div>
-<div id="howto"></div>
-<div id="notFound"></div>
-</div>
 
 </div>
 </div>

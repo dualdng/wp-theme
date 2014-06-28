@@ -6,7 +6,7 @@
 <div class="wrap">
 <?php if(have_posts()) : ?> <!--确认是否有日志-->
 <?php while(have_posts()) : the_post(); ?> 
-	<?php echo first_image(); ?>		
+<img src='<?php echo first_image();?>' />
 	<?php endwhile; // end of the loop. ?>
 	<?php else: ?>
 	<p class='no_article'>没有文章</p>
@@ -18,7 +18,7 @@
 <div style="float:left;">
 
 
-<a href="javascript:void(0);" class="down">下载</a>
+<a href="<?php echo first_image();?>" class="down">下载</a>
 
 <span></span>
 
@@ -36,7 +36,8 @@
 </div>
 <div class="comment_action">
 <span>评论</span>
-<span class="indicator"></span>
+<span class="indicator">
+</span>
 </div>
 </div>
 <?php
@@ -58,6 +59,7 @@ $next_post=get_next_post($current_category,'');//与当前文章同分类的下�
 
 </div></div></div>
 <div class="comments">
+
 <div class="wrapper">
 <?php comments_template( '', true ); ?>
 <div class="loadmore" style="width:560px;margin-top:24px;margin-left:20px;"><span class="t"></span></div>

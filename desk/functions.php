@@ -388,7 +388,7 @@ echo "</ul>";
 }   
 }
 
-/** 获取文章第一张图片 **/ function first_image() 
+/** ??取???碌?一??图片 **/ function first_image() 
 {  
 		global $post, $posts;  
 		$first_img = '';  
@@ -398,21 +398,8 @@ echo "</ul>";
 				$first_img = $matches [1] [0]; 
 if(empty($first_img))
 {   
-		$first_img = '<img src="'.get_bloginfo('template_url').'/images/top1.jpg"/>';   
+		$first_img = get_bloginfo('template_url').'/images/top1.jpg"/>';   
 } 
-else
-{ 
-		$first_img = '<img src="'.$first_img.'"/>'; }  
 		return $first_img;    
 }
-
-
-
 ?>
-<?php 
-function mostmonth($where = '') {
-    //获取最近30天文章
-    $where .= " AND post_date > '" . date('Y-m-d', strtotime('-30 days')) . "'";
-    return $where;
-}
-add_filter('posts_where', 'mostmonth'); ?>
