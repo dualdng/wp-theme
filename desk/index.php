@@ -3,7 +3,6 @@
 <div id="bg"></div>
 <div id="pagewrap">
 <p id="back-top" style="display: block;"><a href="#top"><span></span></a></p>
-<p id="cts" style="display: block;position: fixed; right: 0px; top: 50%; z-index: 9999; background: #e1e1e1;border:1px solid #c8c8c8;border-right-width:0;width: 30px;margin-top: -35px;border-top-left-radius: 4px;border-bottom-left-radius: 4px;"><a href="javascript:void(0);" style="color:#737373;display: block;width: 15px;text-align: center;margin: auto;height: 100%;padding: 15px 0;">反馈</a></p>
 <?php get_sidebar(); ?>
 
 <div id="content">
@@ -46,7 +45,7 @@
   <div style="float:right;">
     <span class="hot">
       <span class="img"></span>
-      <span class="t"><?php echo getPostViews(get_the_ID()); ?></span>
+      <span class="t"><?php post_views(' ', ' ');?></span>
     </span>
   </div>
 </div>
@@ -55,11 +54,18 @@
 </ul>
 
 <ul class="pics-2" >
-<?php query_posts("v_sortby=views&caller_get_posts=1&orderby=date&v_orderby=desc&showposts=10") ?>
+<?php 
+function mostmonth($where = '') {
+		    //获取最近30天文章
+			    $where .= " AND post_date > '" . date('Y-m-d', strtotime('-5000 days')) . "'";
+				    return $where;
+}
+add_filter('posts_where', 'mostmonth'); ?>
+<?php query_posts("v_sortby=views&caller_get_posts=1&orderby=date&v_orderby=desc&showposts=5") ?>
  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <li>
 <div class="wrapper">
-      <div class='post-list-img'><a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php echo first_image() ?></a></div>
+      <div class='post-list-img'><a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><img src='<?php echo first_image() ?>'/></a></div>
 </div>
 
 <div class="info">
@@ -72,7 +78,7 @@
   <div style="float:right;">
     <span class="hot">
       <span class="img"></span>
-      <span class="t"><?php echo getPostViews(get_the_ID()); ?></span>
+      <span class="t"><?php post_views(' ', ' ');?></span>
     </span>
   </div>
 </div>

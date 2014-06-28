@@ -26,8 +26,7 @@
 
 <span>
 <li>
-<a href="javascript:void(0);" class="side_more"><span><p>更多</p><div><?php echo $num-5;?></div></span></a>
-<a href="11#" class="all">分类</a>
+<a href="javascript:void(0);" class="side_more"><span><p>更多(<?php echo $num-5;?>)</p><div></div></span></a>
 <ul class="animated fadeIn">
 <span class="zip">
 </span>
