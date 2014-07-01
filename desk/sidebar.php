@@ -1,7 +1,7 @@
 <div id="slider" style="display: block;">
 
 <div class="wrapper">
-<?/**php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); **/?>
+<!--<?/**php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); **/?>-->
 
 
 <ul>
@@ -52,7 +52,7 @@
 
   <form method="get" action="<?php echo esc_url( home_url( '' ) )?>" target="_blank">            
   <input id="searchTextbox" class="search" size="4" name="s" placeholder='搜索'>             
-   <button type="submit" name=""></button>    
+   <input type="submit" style='display:none'></input>    
 
  </form>
 </div>

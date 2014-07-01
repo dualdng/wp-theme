@@ -2,7 +2,7 @@
 <div id="wrapper">
 <div id="bg"></div>
 <div id="pagewrap">
-<p id="back-top" style="display: block;"><a href="#top"><span></span></a></p>
+<p id="back-top" ><a href="javascript:void(0);" onclick='go_top();'><span></span></a></p>
 <?php get_sidebar(); ?>
 
 <div id="content">
@@ -17,8 +17,8 @@
 <div class="nav">
   <div class="nav_wrapper">
 
-    <a href="javascript:void(0);" onclick='javascript:new_pop();' class="new active"><span>最新美图</span></a>
-    <a href="javascript:void(0);" onclick='javascript:most_pop();'class='more'><span>热门排行</span></a>
+<a href="javascript:void(0);" onclick='javascript:new_pop();' class="new active"><span>最新美图</span></a>
+<a href="javascript:void(0);" onclick='javascript:most_pop();'class='more'><span>热门排行</span></a>
 
   </div>
 </div>
@@ -52,16 +52,8 @@
 </li>
 <?php endwhile; ?>
 </ul>
-
 <ul class="pics-2" >
-<?php 
-function mostmonth($where = '') {
-		    //获取最近30天文章
-			    $where .= " AND post_date > '" . date('Y-m-d', strtotime('-5000 days')) . "'";
-				    return $where;
-}
-add_filter('posts_where', 'mostmonth'); ?>
-<?php query_posts("v_sortby=views&caller_get_posts=1&orderby=date&v_orderby=desc&showposts=5") ?>
+
  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <li>
 <div class="wrapper">
@@ -86,7 +78,6 @@ add_filter('posts_where', 'mostmonth'); ?>
 <?php endwhile; ?>
 <?php endif; ?>
 </ul>
-
 <div class="pagenavi">
 
 <span class="t"><?php pagenavi(); ?></span>

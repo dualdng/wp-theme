@@ -89,3 +89,20 @@ $(document).on('click','.pagenavi a',function(){
 		return false;
 		})
 
+$(document).ready(function($) {
+						var H = $("#list").offset().top;
+						$(window).scroll(function() {
+								var scroH = $(this).scrollTop();
+								if (scroH >= H) {
+		$('#back-top').css({'display':'block'});
+								} else if (scroH < H) {
+								$("#back-top").css({
+										"display": "none",				
+										})
+								};
+						})
+				})
+function go_top(){
+		var hight=$('#wrapper').offset().top;
+		$('body').animate({scrollTop:hight},500);
+}

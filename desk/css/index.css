@@ -56,3 +56,33 @@ top:50%;
 left:48%;
 z-index:9999;
 }
+.pagenavi {
+		color:#ccc;
+}
+a.page-numbers {
+		border:1px solid #ccc;
+		padding: 4px 8px;
+border: 1px solid #ccc;
+-webkit-border-radius: 30%;
+-o-border-radius:30%;
+-moz-border-radius:30%;
+border-radius:30%;
+color: #ccc;
+}
+a.page-numbers:hover {
+		color:#fff;
+		background-color:#61a64b;
+}
+.page-numbers.current {
+border:1px solid #ccc;
+padding: 4px 8px;
+border: 1px solid #ccc;
+		-webkit-border-radius: 30%;
+		-o-border-radius:30%;
+		-moz-border-radius:30%;
+		border-radius:30%;
+color: #61a64b;
+font-weight:bold;
+}
+
+

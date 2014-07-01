@@ -27,7 +27,7 @@ display: none !important;
 <body id="top">
 
 <div id="header"><div class="wrapper"><ul>
-  <li class="brand"><a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src='<?php echo get_option('mytheme_logourl');?>' style='width:80px;height:50px;'/></a></li>
+  <li class="brand"><a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src='<?php echo get_template_directory_uri(); ?>/<?php echo get_option('mytheme_logourl');?>' style='width:80px;height:50px;'/></a></li>
   <li class="index"><a class="active" href="<?php echo esc_url( home_url( '/' ) ); ?>">首页</a></li>
   <li class="app"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/app" class="">客户端</a></li> <li style="position:absolute;top:25px;right:20px;"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">投稿聚乐部</a></li>
 </ul></div>
